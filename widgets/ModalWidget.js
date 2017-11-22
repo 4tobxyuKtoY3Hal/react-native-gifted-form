@@ -8,15 +8,17 @@ import {
   TouchableOpacity,
   PixelRatio,
 } from 'react-native';
+import PropTypes from 'prop-types';
 
 var WidgetMixin = require('../mixins/WidgetMixin');
 
 var GiftedFormManager = require('../GiftedFormManager');
 var TimerMixin = require('react-timer-mixin');
+var createReactClass = require('create-react-class');
 
 var moment = require('moment');
 
-module.exports = React.createClass({
+module.exports = createReactClass({
   mixins: [TimerMixin, WidgetMixin],
 
   getDefaultProps() {
@@ -31,12 +33,12 @@ module.exports = React.createClass({
   },
 
   propTypes: {
-    type: React.PropTypes.string,
-    scrollEnabled: React.PropTypes.bool,
-    disclosure: React.PropTypes.bool,
-    cancelable: React.PropTypes.bool,
-    displayValue: React.PropTypes.string,
-    onClose: React.PropTypes.func
+    type: PropTypes.string,
+    scrollEnabled: PropTypes.bool,
+    disclosure: PropTypes.bool,
+    cancelable: PropTypes.bool,
+    displayValue: PropTypes.string,
+    onClose: PropTypes.func
   },
 
   getInitialState() {

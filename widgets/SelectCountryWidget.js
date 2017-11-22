@@ -5,6 +5,7 @@ var {
 
 var WidgetMixin = require('../mixins/WidgetMixin.js');
 var OptionWidget = require('./OptionWidget.js');
+var createReactClass = require('create-react-class');
 
 // countries list from https://www.iso.org/obp/ui/#search
 var countries =
@@ -260,7 +261,7 @@ var countries =
 ];
 
 
-module.exports = React.createClass({
+module.exports = createReactClass({
   mixins: [WidgetMixin],
 
   statics: {

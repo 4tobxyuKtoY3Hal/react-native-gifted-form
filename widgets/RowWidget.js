@@ -9,11 +9,11 @@ var {
 
 var WidgetMixin = require('../mixins/WidgetMixin.js');
 var TimerMixin = require('react-timer-mixin');
+var createReactClass = require('create-react-class');
 
-
-module.exports = React.createClass({
+module.exports = createReactClass({
   mixins: [TimerMixin, WidgetMixin],
-  
+
   getDefaultProps() {
     return {
       type: 'RowWidget',
@@ -21,7 +21,7 @@ module.exports = React.createClass({
       disclosure: true,
     };
   },
-  
+
   _renderDisclosure() {
     if (this.props.disclosure === true) {
       return (
@@ -34,7 +34,7 @@ module.exports = React.createClass({
     }
     return null;
   },
-  
+
   render() {
     return (
       <View style={this.getStyle('rowContainer')}>
@@ -56,7 +56,7 @@ module.exports = React.createClass({
       </View>
     );
   },
-  
+
   defaultStyles: {
     rowImage: {
       height: 20,

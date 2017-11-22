@@ -9,8 +9,9 @@ var {
 } = require('react-native')
 
 var WidgetMixin = require('../mixins/WidgetMixin.js');
+var createReactClass = require('create-react-class');
 
-var GiftedSwitch = React.createClass({
+var GiftedSwitch = createReactClass({
   _getSwitch() {
     if (Platform.OS === 'android') {
       return (
@@ -37,7 +38,7 @@ var GiftedSwitch = React.createClass({
 
 
 
-module.exports = React.createClass({
+module.exports = createReactClass({
   mixins: [WidgetMixin],
 
   getDefaultProps() {

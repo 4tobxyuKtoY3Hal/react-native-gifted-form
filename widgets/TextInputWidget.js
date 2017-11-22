@@ -7,9 +7,11 @@ var {
 } = require('react-native')
 
 var WidgetMixin = require('../mixins/WidgetMixin.js');
+var createReactClass = require('create-react-class');
 
 
-module.exports = React.createClass({
+
+module.exports = createReactClass({
   mixins: [WidgetMixin],
 
   getDefaultProps() {
@@ -22,23 +24,23 @@ module.exports = React.createClass({
       onTextInputBlur: (value) => value
     }
   },
-  
+
   getInitialState() {
     return {
       focused: false,
     }
   },
-  
+
   _renderTitle() {
     if (this.props.title !== '') {
       return (
-        <Text 
+        <Text
           numberOfLines={1}
           style={this.getStyle(['textInputTitleInline'])}
         >
           {this.props.title}
         </Text>
-      );      
+      );
     }
     return (
       <View style={this.getStyle(['spacer'])}/>
@@ -46,7 +48,7 @@ module.exports = React.createClass({
   },
 
   _renderRow() {
-    
+
     if (this.props.inline === false) {
       return (
         <View style={this.getStyle(['rowContainer'])}>
@@ -54,17 +56,17 @@ module.exports = React.createClass({
             {this._renderImage()}
             <Text numberOfLines={1} style={this.getStyle(['textInputTitle'])}>{this.props.title}</Text>
           </View>
-          
+
           <TextInput
             ref='input'
             style={this.getStyle(['textInput'])}
-          
+
             {...this.props}
-            
+
             onFocus={this.onFocus}
             onBlur={this.onBlur}
-            
-            
+
+
             onChangeText={this._onChange}
             value={this.state.value}
           />
@@ -72,7 +74,7 @@ module.exports = React.createClass({
           {this._renderUnderline()}
         </View>
       );
-    } 
+    }
     return (
       <View style={this.getStyle(['rowContainer'])}>
         <View style={this.getStyle(['row'])}>
@@ -83,10 +85,10 @@ module.exports = React.createClass({
             style={this.getStyle(['textInputInline'])}
 
             {...this.props}
-            
+
             onFocus={this.onFocus}
             onBlur={this.onBlur}
-            
+
             onChangeText={this._onChange}
             value={this.state.value}
           />
@@ -97,7 +99,7 @@ module.exports = React.createClass({
     );
 
   },
-  
+
   onFocus() {
     this.setState({
       focused: true,
@@ -108,19 +110,19 @@ module.exports = React.createClass({
     if (newText !== oldText) {
       this._onChange(newText);
     }
-    
+
   },
-  
+
   onBlur() {
     this.setState({
       focused: false,
-    });    
+    });
     this.props.onBlur();
     this.props.onTextInputBlur(this.state.value);
   },
-  
-  
-  
+
+
+
   _renderUnderline() {
     if (this.props.underlined === true) {
       if (this.state.focused === false) {
@@ -128,7 +130,7 @@ module.exports = React.createClass({
           <View
             style={this.getStyle(['underline', 'underlineIdle'])}
           />
-        );        
+        );
       }
       return (
         <View
@@ -138,11 +140,11 @@ module.exports = React.createClass({
     }
     return null;
   },
-  
+
   render() {
     return this._renderRow();
   },
-  
+
   defaultStyles: {
     rowImage: {
       height: 20,

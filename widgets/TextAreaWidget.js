@@ -6,17 +6,18 @@ var {
 } = require('react-native')
 
 var WidgetMixin = require('../mixins/WidgetMixin.js');
+var createReactClass = require('create-react-class');
 
 
-module.exports = React.createClass({
+module.exports = createReactClass({
   mixins: [WidgetMixin],
-  
+
   getDefaultProps() {
     return {
       type: 'TextAreaWidget',
     };
   },
-  
+
   render() {
     return (
       <View style={this.getStyle('textAreaRow')}>
@@ -25,7 +26,7 @@ module.exports = React.createClass({
           multiline={true}
 
           {...this.props}
-          
+
           onFocus={() => this.props.onFocus(true)}
           onChangeText={this._onChange}
           value={this.state.value}
@@ -33,7 +34,7 @@ module.exports = React.createClass({
       </View>
     );
   },
-  
+
   defaultStyles: {
     textAreaRow: {
       backgroundColor: '#FFF',
@@ -49,5 +50,5 @@ module.exports = React.createClass({
       flex: 1,
     },
   },
-  
+
 });

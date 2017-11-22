@@ -4,17 +4,18 @@ var {
 } = require('react-native')
 
 var WidgetMixin = require('../mixins/WidgetMixin.js');
+var createReactClass = require('create-react-class');
 
 
-module.exports = React.createClass({
+module.exports = createReactClass({
   mixins: [WidgetMixin],
-  
+
   getDefaultProps() {
     return {
       type: 'SeparatorWidget',
     };
   },
-  
+
   render() {
     return (
       <View
@@ -23,7 +24,7 @@ module.exports = React.createClass({
       />
     );
   },
-  
+
   defaultStyles: {
     separator: {
       height: 10,

@@ -4,10 +4,10 @@ import {
   Text,
 } from 'react-native';
 
-
+var createReactClass = require('create-react-class');
 const WidgetMixin = require('../mixins/WidgetMixin.js');
 
-module.exports = React.createClass({
+module.exports = createReactClass({
   mixins: [WidgetMixin],
 
   render() {

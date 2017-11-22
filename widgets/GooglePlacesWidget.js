@@ -3,21 +3,21 @@ var React = require('react');
 var WidgetMixin = require('../mixins/WidgetMixin.js');
 
 var {GooglePlacesAutocomplete} = require('react-native-google-places-autocomplete');
+var createReactClass = require('create-react-class');
 
-
-module.exports = React.createClass({
+module.exports = createReactClass({
   mixins: [WidgetMixin],
-  
+
   getDefaultProps() {
     return {
       type: 'GooglePlacesWidget',
     };
   },
-  
+
   render() {
     const everywhere = {description: 'Everywhere', geometry: { location: { lat: 0, lng: 0 } }};
-    
-    
+
+
     return (
       <GooglePlacesAutocomplete
         placeholder='Type a city name'
@@ -46,7 +46,7 @@ module.exports = React.createClass({
             color: '#1faadb',
           },
         }}
-        
+
         currentLocation={true} // Will add a 'Current location' button at the top of the predefined places list
         currentLocationLabel="Current location"
         currentLocationAPI='GoogleReverseGeocoding' // Which API to use: GoogleReverseGeocoding or GooglePlacesSearch
@@ -58,13 +58,13 @@ module.exports = React.createClass({
           rankby: 'distance',
           types: 'food',
         }}
-        
-        
+
+
         filterReverseGeocodingByTypes={['locality', 'administrative_area_level_3']} // filter the reverse geocoding results by types - ['locality', 'administrative_area_level_3'] if you want to display only cities
-        
+
         // predefinedPlaces={[everywhere]}
-        
-        
+
+
         {...this.props} // @todo test sans (need for 'name')
       />
     );

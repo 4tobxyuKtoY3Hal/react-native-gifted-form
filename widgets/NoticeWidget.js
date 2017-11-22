@@ -5,18 +5,18 @@ var {
 } = require('react-native')
 
 var WidgetMixin = require('../mixins/WidgetMixin.js');
+var createReactClass = require('create-react-class');
 
 
-
-module.exports = React.createClass({
+module.exports = createReactClass({
   mixins: [WidgetMixin],
-  
+
   getDefaultProps() {
     return {
       type: 'NoticeWidget',
     };
   },
-  
+
   render() {
     return (
       <View>
@@ -31,7 +31,7 @@ module.exports = React.createClass({
       </View>
     );
   },
-  
+
   defaultStyles: {
     noticeRow: {
       paddingBottom: 10,
@@ -42,7 +42,6 @@ module.exports = React.createClass({
     noticeTitle: {
       fontSize: 13,
       color: '#9b9b9b',
-    },  
+    },
   },
 });
-

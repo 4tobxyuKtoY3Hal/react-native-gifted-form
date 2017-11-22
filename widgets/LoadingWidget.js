@@ -9,10 +9,11 @@ var {
 
 var WidgetMixin = require('../mixins/WidgetMixin.js');
 var GiftedSpinner = require('react-native-gifted-spinner');
+var createReactClass = require('create-react-class');
 
-module.exports = React.createClass({
+module.exports = createReactClass({
   mixins: [WidgetMixin],
-  
+
   getDefaultProps() {
     return {
       type: 'LoadingWidget',
@@ -35,7 +36,7 @@ module.exports = React.createClass({
       </View>
     );
   },
-  
+
   defaultStyles: {
     rowImage: {
       height: 20,

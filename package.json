@@ -1,28 +1,65 @@
 {
-  "name": "react-native-gifted-form",
-  "version": "0.0.13",
-  "description": "Form component for react-native",
-  "main": "GiftedForm.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/FaridSafi/react-native-gifted-form.git"
-  },
-  "keywords": [
-    "form",
-    "react-component",
-    "react-native",
-    "ios",
-    "android"
+  "_args": [
+    [
+      {
+        "raw": "github:farazshaikh/react-native-gifted-form#rcn-0.39.0",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "github:farazshaikh/react-native-gifted-form#rcn-0.39.0",
+        "spec": "github:farazshaikh/react-native-gifted-form#rcn-0.39.0",
+        "type": "hosted",
+        "hosted": {
+          "type": "github",
+          "ssh": "git@github.com:farazshaikh/react-native-gifted-form.git#rcn-0.39.0",
+          "sshUrl": "git+ssh://git@github.com/farazshaikh/react-native-gifted-form.git#rcn-0.39.0",
+          "httpsUrl": "git+https://github.com/farazshaikh/react-native-gifted-form.git#rcn-0.39.0",
+          "gitUrl": "git://github.com/farazshaikh/react-native-gifted-form.git#rcn-0.39.0",
+          "shortcut": "github:farazshaikh/react-native-gifted-form#rcn-0.39.0",
+          "directUrl": "https://raw.githubusercontent.com/farazshaikh/react-native-gifted-form/rcn-0.39.0/package.json"
+        }
+      },
+      "/Volumes/var/react_native/YourHour"
+    ]
   ],
-  "author": "Farid from Safi",
-  "license": "MIT",
+  "_from": "farazshaikh/react-native-gifted-form#rcn-0.39.0",
+  "_id": "react-native-gifted-form@0.0.13",
+  "_inCache": true,
+  "_location": "/react-native-gifted-form",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "github:farazshaikh/react-native-gifted-form#rcn-0.39.0",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "github:farazshaikh/react-native-gifted-form#rcn-0.39.0",
+    "spec": "github:farazshaikh/react-native-gifted-form#rcn-0.39.0",
+    "type": "hosted",
+    "hosted": {
+      "type": "github",
+      "ssh": "git@github.com:farazshaikh/react-native-gifted-form.git#rcn-0.39.0",
+      "sshUrl": "git+ssh://git@github.com/farazshaikh/react-native-gifted-form.git#rcn-0.39.0",
+      "httpsUrl": "git+https://github.com/farazshaikh/react-native-gifted-form.git#rcn-0.39.0",
+      "gitUrl": "git://github.com/farazshaikh/react-native-gifted-form.git#rcn-0.39.0",
+      "shortcut": "github:farazshaikh/react-native-gifted-form#rcn-0.39.0",
+      "directUrl": "https://raw.githubusercontent.com/farazshaikh/react-native-gifted-form/rcn-0.39.0/package.json"
+    }
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git://github.com/farazshaikh/react-native-gifted-form.git#a1d87d0690599fcf0cab7b71c43a934fdb219249",
+  "_shasum": "053363df990b67d2b3501058b901e12b7090f6e3",
+  "_shrinkwrap": null,
+  "_spec": "github:farazshaikh/react-native-gifted-form#rcn-0.39.0",
+  "_where": "/Volumes/var/react_native/YourHour",
+  "author": {
+    "name": "Farid from Safi"
+  },
   "bugs": {
     "url": "https://github.com/FaridSafi/react-native-gifted-form/issues"
   },
-  "homepage": "https://github.com/FaridSafi/react-native-gifted-form#readme",
   "dependencies": {
     "apsl-react-native-button": "^3.0.0",
     "moment": "^2.14.1",
@@ -31,5 +68,30 @@
     "react-native-google-places-autocomplete": "^1.2.0",
     "react-timer-mixin": "^0.13.3",
     "validator": "^5.4.0"
-  }
+  },
+  "description": "Form component for react-native",
+  "devDependencies": {},
+  "gitHead": "a1d87d0690599fcf0cab7b71c43a934fdb219249",
+  "homepage": "https://github.com/FaridSafi/react-native-gifted-form#readme",
+  "keywords": [
+    "form",
+    "react-component",
+    "react-native",
+    "ios",
+    "android"
+  ],
+  "license": "MIT",
+  "main": "GiftedForm.js",
+  "name": "react-native-gifted-form",
+  "optionalDependencies": {},
+  "readme": "# Gifted Form\nForm component for React-Native\n\n\n![](https://raw.githubusercontent.com/FaridSafi/react-native-gifted-form/master/capture/signup.gif)\n\n### Changelog\n\n#### 0.0.7\n- SelectDayWidget, CellWidget and DayPickerWidget are now deprecated and will be replaced by DatePickerWidget\n\n\n### Example\n\n```js\nvar {GiftedForm, GiftedFormManager} = require('react-native-gifted-form');\n\nvar Component = React.createClass({\n  render() {\n    return (\n      <GiftedForm\n        formName='signupForm' // GiftedForm instances that use the same name will also share the same states\n\n        openModal={(route) => {\n          navigator.push(route); // The ModalWidget will be opened using this method. Tested with ExNavigator\n        }}\n\n        clearOnClose={false} // delete the values of the form when unmounted\n\n        defaults={{\n          /*\n          username: 'Farid',\n          'gender{M}': true,\n          password: 'abcdefg',\n          country: 'FR',\n          birthday: new Date(((new Date()).getFullYear() - 18)+''),\n          */\n        }}\n\n        validators={{\n          fullName: {\n            title: 'Full name',\n            validate: [{\n              validator: 'isLength',\n              arguments: [1, 23],\n              message: '{TITLE} must be between {ARGS[0]} and {ARGS[1]} characters'\n            }]\n          },\n          username: {\n            title: 'Username',\n            validate: [{\n              validator: 'isLength',\n              arguments: [3, 16],\n              message: '{TITLE} must be between {ARGS[0]} and {ARGS[1]} characters'\n            },{\n              validator: 'matches',\n              arguments: /^[a-zA-Z0-9]*$/,\n              message: '{TITLE} can contains only alphanumeric characters'\n            }]\n          },\n          password: {\n            title: 'Password',\n            validate: [{\n              validator: 'isLength',\n              arguments: [6, 16],\n              message: '{TITLE} must be between {ARGS[0]} and {ARGS[1]} characters'\n            }]\n          },\n          emailAddress: {\n            title: 'Email address',\n            validate: [{\n              validator: 'isLength',\n              arguments: [6, 255],\n            },{\n              validator: 'isEmail',\n            }]\n          },\n          bio: {\n            title: 'Biography',\n            validate: [{\n              validator: 'isLength',\n              arguments: [0, 512],\n              message: '{TITLE} must be between {ARGS[0]} and {ARGS[1]} characters'\n            }]\n          },\n          gender: {\n            title: 'Gender',\n            validate: [{\n              validator: (...args) => {\n                if (args[0] === undefined) {\n                  return false;\n                }\n                return true;\n              },\n              message: '{TITLE} is required',\n            }]\n          },\n          birthday: {\n            title: 'Birthday',\n            validate: [{\n              validator: 'isBefore',\n              arguments: [moment().utc().subtract(18, 'years').format('YYYY-MM-DD')],\n              message: 'You must be at least 18 years old'\n            }, {\n              validator: 'isAfter',\n              arguments: [moment().utc().subtract(100, 'years').format('YYYY-MM-DD')],\n              message: '{TITLE} is not valid'\n            }]\n          },\n          country: {\n            title: 'Country',\n            validate: [{\n              validator: 'isLength',\n              arguments: [2],\n              message: '{TITLE} is required'\n            }]\n          },\n        }}\n      >\n\n        <GiftedForm.SeparatorWidget />\n        <GiftedForm.TextInputWidget\n          name='fullName' // mandatory\n          title='Full name'\n\n          image={require('../../assets/icons/color/user.png')}\n\n          placeholder='Marco Polo'\n          clearButtonMode='while-editing'\n        />\n\n\n        <GiftedForm.TextInputWidget\n          name='username'\n          title='Username'\n          image={require('../../assets/icons/color/contact_card.png')}\n\n          placeholder='MarcoPolo'\n          clearButtonMode='while-editing'\n\n          onTextInputFocus={(currentText = '') => {\n            if (!currentText) {\n              let fullName = GiftedFormManager.getValue('signupForm', 'fullName');\n              if (fullName) {\n                return fullName.replace(/[^a-zA-Z0-9-_]/g, '');\n              }\n            }\n            return currentText;\n          }}\n        />\n\n        <GiftedForm.TextInputWidget\n          name='password' // mandatory\n          title='Password'\n\n          placeholder='******'\n\n\n          clearButtonMode='while-editing'\n          secureTextEntry={true}\n          image={require('../../assets/icons/color/lock.png')}\n        />\n\n        <GiftedForm.TextInputWidget\n          name='emailAddress' // mandatory\n          title='Email address'\n          placeholder='example@nomads.ly'\n\n          keyboardType='email-address'\n\n          clearButtonMode='while-editing'\n\n          image={require('../../assets/icons/color/email.png')}\n        />\n\n        <GiftedForm.SeparatorWidget />\n\n        <GiftedForm.ModalWidget\n          title='Gender'\n          displayValue='gender'\n          image={require('../../assets/icons/color/gender.png')}\n        >\n          <GiftedForm.SeparatorWidget />\n\n          <GiftedForm.SelectWidget name='gender' title='Gender' multiple={false}>\n            <GiftedForm.OptionWidget image={require('../../assets/icons/color/female.png')} title='Female' value='F'/>\n            <GiftedForm.OptionWidget image={require('../../assets/icons/color/male.png')} title='Male' value='M'/>\n          </GiftedForm.SelectWidget>\n        </GiftedForm.ModalWidget>\n\n        <GiftedForm.ModalWidget\n          title='Birthday'\n          displayValue='birthday'\n          image={require('../../assets/icons/color/birthday.png')}\n\n          scrollEnabled={false}\n        >\n          <GiftedForm.SeparatorWidget/>\n          <GiftedForm.DatePickerIOSWidget\n            name='birthday'\n            mode='date'\n\n            getDefaultDate={() => {\n              return new Date(((new Date()).getFullYear() - 18)+'');\n            }}\n          />\n        </GiftedForm.ModalWidget>\n        <GiftedForm.ModalWidget\n          title='Country'\n          displayValue='country'\n          image={require('../../assets/icons/color/passport.png')}\n          scrollEnabled={false}\n\n        >\n          <GiftedForm.SelectCountryWidget\n            code='alpha2'\n            name='country'\n            title='Country'\n            autoFocus={true}\n          />\n        </GiftedForm.ModalWidget>\n\n\n        <GiftedForm.ModalWidget\n          title='Biography'\n          displayValue='bio'\n\n          image={require('../../assets/icons/color/book.png')}\n\n          scrollEnabled={true} // true by default\n        >\n          <GiftedForm.SeparatorWidget/>\n          <GiftedForm.TextAreaWidget\n            name='bio'\n\n            autoFocus={true}\n\n            placeholder='Something interesting about yourself'\n          />\n        </GiftedForm.ModalWidget>\n\n\n\n        <GiftedForm.SubmitWidget\n          title='Sign up'\n          widgetStyles={{\n            submitButton: {\n              backgroundColor: themes.mainColor,\n            }\n          }}\n          onSubmit={(isValid, values, validationResults, postSubmit = null, modalNavigator = null) => {\n            if (isValid === true) {\n              // prepare object\n              values.gender = values.gender[0];\n              values.birthday = moment(values.birthday).format('YYYY-MM-DD');\n\n              /* Implement the request to your server using values variable\n              ** then you can do:\n              ** postSubmit(); // disable the loader\n              ** postSubmit(['An error occurred, please try again']); // disable the loader and display an error message\n              ** postSubmit(['Username already taken', 'Email already taken']); // disable the loader and display an error message\n              ** GiftedFormManager.reset('signupForm'); // clear the states of the form manually. 'signupForm' is the formName used\n              */\n            }\n          }}\n\n        />\n\n        <GiftedForm.NoticeWidget\n          title='By signing up, you agree to the Terms of Service and Privacy Policity.'\n        />\n\n        <GiftedForm.HiddenWidget name='tos' value={true} />\n\n      </GiftedForm>\n    );\n  }\n});\n```\n\n### Storing form's state elsewhere (could be used with Redux) - Beta feature\n\nPass `value` prop to your widgets and `onValueChange` to your GiftedForm to store your state outside of GiftedFormManager's store.\n\nIMPORTANT: currently only TextInputWidget and HiddenWidget support this feature. PR's are welcome for the other widgets ;)\n\n```js\nimport React, { AppRegistry, Component } from 'react-native'\nimport { GiftedForm, GiftedFormManager } from 'react-native-gifted-form'\n\nclass Form extends Component {\n  constructor(props, context) {\n    super(props, context)\n    this.state = {\n      form: {\n        fullName: 'Marco Polo',\n        tos: false,\n      }\n    }\n  }\n\n  handleValueChange(values) {\n    console.log('handleValueChange', values)\n    this.setState({ form: values })\n  }\n\n  render() {\n    const { fullName, tos, gender } = this.state.form\n    console.log('render', this.state.form)\n    return (\n      <GiftedForm\n        formName='signupForm'\n        openModal={(route) => { this.props.navigator.push(route) }}\n        onValueChange={this.handleValueChange.bind(this)}\n      >\n        <GiftedForm.TextInputWidget\n          name='fullName'\n          title='Full name'\n          placeholder='Marco Polo'\n          clearButtonMode='while-editing'\n          value={fullName}\n        />\n        <GiftedForm.HiddenWidget name='tos' value={tos} />\n      </GiftedForm>\n    )\n  }\n}\n\nAppRegistry.registerComponent('Form', () => Form)\n```\n\n### Installation\n\n`npm install react-native-gifted-form --save`\n\n\n### Available widgets\n- TextInputWidget - A text input\n- TextAreaWidget - A text area\n- GooglePlacesWidget - A Google Places picker based on react-native-google-places-autocomplete\n- ModalWidget - A route opener for nested forms\n- GroupWidget - A widgets container with a title\n- HiddenWidget - A non-displayed widget. The value will be passed to SubmitWidget\n- LoadingWidget - A loader\n- RowWidget - A touchable row with title/image\n- SelectCountryWidget - A country picker. Flags made by www.IconDrawer.com\n- SelectWidget - A select menu\n- SeparatorWidget - A 10px widgets separator\n- SubmitWidget - A submit button that trigger form validators and error displaying\n- SwitchWidget - A switch\n- DatePickerIOSWidget - Date picker for iOS\n- NoticeWidget - A notice information - PR wanted for onPress handler\n\n\nSee the sources for props details\n\n\n### Your own widget\nWidgets must implement the mixin GiftedForm.WidgetMixin - See /widgets/TextAreaWidget.js for example\n\n\n### Contributing\nPull requests are welcome\n\n\n### License\n\n[MIT](LICENSE)\n\nFeel free to ask me questions on Twitter [@FaridSafi](https://www.twitter.com/FaridSafi) !\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FaridSafi/react-native-gifted-form.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "0.0.13"
 }
